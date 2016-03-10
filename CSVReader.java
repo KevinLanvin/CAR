@@ -1,3 +1,4 @@
+package server;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -45,13 +46,13 @@ public class CSVReader {
 	}
 
 	
-	public String passwordOfUser(String s) throws IOException{
+	public int passwordOfUser(String s) throws IOException{
 		FileReader fr;
 		try {
 			fr = new FileReader(usersFile);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			return "ERROR";
+			return -1;
 		}
 		BufferedReader br = new BufferedReader(fr);
 		
@@ -59,11 +60,11 @@ public class CSVReader {
 			if(line.split(",")[0].equals(s)){
 				br.close();
 				fr.close();
-				return line.split(",")[1];
+				return Integer.parseInt(line.split(",")[1]);
 			}
 		}
 		br.close();
 		fr.close();
-		return "Not Found";
+		return 0;
 	}
 }
