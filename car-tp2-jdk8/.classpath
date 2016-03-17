@@ -5,7 +5,6 @@
 	<classpathentry kind="lib" path="lib/aopalliance-1.0.jar"/>
 	<classpathentry kind="lib" path="lib/cglib-nodep-2.2.jar"/>
 	<classpathentry kind="lib" path="lib/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="lib/commons-net-3.2-ftp.jar"/>
 	<classpathentry kind="lib" path="lib/cxf-api-2.7.2.jar"/>
 	<classpathentry kind="lib" path="lib/cxf-rt-bindings-xml-2.7.2.jar"/>
 	<classpathentry kind="lib" path="lib/cxf-rt-core-2.7.2.jar"/>
