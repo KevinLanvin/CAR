@@ -6,6 +6,7 @@
 	<body>
 		<h1>Put</h1>
 		<form action="http://localhost:8080/rest/tp2/ftp/put" method="POST">
+			<input type="text" name="path"/>
 			<input type="file" name="file" />
 			<input type="submit" value="Submit" />
 		</form>

@@ -5,7 +5,9 @@
 	</head>
 	<body>
 		<h1>Put</h1>
-		<form enctype="multipart/form-data" action="http://localhost:8080/rest/tp2/ftp/put" method="POST">
+		<form action="http://localhost:8080/rest/tp2/ftp/put" method="POST">
+			Destination: <input type="text" name="path"/>
+			<br />
 			<input type="file" name="file" />
 			<input type="submit" value="Submit" />
 		</form>

@@ -1,10 +1,12 @@
 package car.tp2;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.SocketException;
 
-import javax.ws.rs.Consumes;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -15,9 +17,6 @@ import javax.ws.rs.core.Response;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPClientConfig;
 import org.apache.commons.net.ftp.FTPFile;
-import org.jboss.resteasy.annotations.providers.multipart.MultipartForm;
-
-import com.sun.xml.internal.messaging.saaj.util.ByteInputStream;
 
 @Path("/ftp")
 public class FTPResource {
@@ -42,7 +41,7 @@ public class FTPResource {
 
 	@GET
 	@Produces("application/octet-stream")
-	@Path("/file/{path}")
+	@Path("/file{path : (/.*)*}")
 	public Response get(@PathParam("path") String path) {
 		try {
 			byte[] buffer = new byte[10000000];
@@ -56,33 +55,26 @@ public class FTPResource {
 		}
 	}
 
-	/*
-	 * PUT -> POST car il est impossible de créer un formulaire avec la méthode
-	 * PUT.
-	 */
-
 	@POST
 	@Path("/put")
-	@Consumes("multipart/form-data")
 	@Produces("text/html")
-	public String put(@MultipartForm FileUploadForm form) {
+	public String put(@FormParam("path") String path,
+			@FormParam("file") File file) {
 		try {
-			String filename = form.getFileName();
-			byte[] file = form.getFileData();
-			ftp.storeFile(filename, new ByteInputStream(file, file.length));
+			ftp.storeFile(path, new FileInputStream(file));
 			return "OK";
 		} catch (IOException e) {
 			e.printStackTrace();
-			return "Rappelez-moi pourquoi on est obligés de le faire en java avec une API verbeuse, dans une version pas à jour avec des librairies qui manquent ?";
+			return "Nope";
 		}
 	}
 
 	@GET
-	@Path("/delete/{path}")
+	@Path("/delete{path : (/.*)*}")
 	public String delete(@PathParam("path") String path) {
+		System.out.println("Delete " + path);
 		try {
 			ftp.dele(path);
-			ftp.completePendingCommand();
 			return path + " deleted";
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -96,12 +88,12 @@ public class FTPResource {
 	public String list(@PathParam("path") String path) {
 		FTPFile[] files;
 		try {
-			files = ftp.listFiles(path);
-			ftp.completePendingCommand();
-			String res = "";
+			ftp.changeWorkingDirectory(path);
+			files = ftp.listFiles();
+			String res = "<a href= \"http://localhost:8080/rest/tp2/ftp/list/"
+					+ path + "/..\">..</a><br />";
 			for (FTPFile f : files)
-				// Remplacer par les ancres
-				res += f.getName() + "<\br>";
+				res += parse(f.toString(), path) + "<br />";
 			return res;
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -110,13 +102,28 @@ public class FTPResource {
 
 	}
 
+	private String parse(String name, String path) {
+		String[] words = name.split(" ");
+		if (words[0].equals("f"))
+			return "<a href= \"http://localhost:8080/rest/tp2/ftp/file/"
+					+ path
+					+ words[1]
+					+ "\">"
+					+ words[1]
+					+ "</a> (<a href=\"http://localhost:8080/rest/tp2/ftp/delete/"
+					+ path + words[1] + "\">delete</a>)";
+		if (words[0].equals("d"))
+			return "<a href= \"http://localhost:8080/rest/tp2/ftp/list/" + path
+					+ words[1] + "/\">" + words[1] + "</a>";
+		return "Mauvais formatage des données";
+	}
+
 	@GET
-	@Path("/mkdir/{path}")
+	@Path("/mkdir{path : (/.*)*}")
 	@Produces("text/html")
 	public String mkdir(@PathParam("path") String path) {
 		try {
 			String res = ftp.makeDirectory(path) ? path + " created" : "Non";
-			ftp.completePendingCommand();
 			return res;
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -124,9 +131,4 @@ public class FTPResource {
 		}
 	}
 
-	/*
-	 * Veuillez excuser ces commentaires acérés dûs à une perte de patience
-	 * devant le côté laborieux d'un travail qui devrait pourtant être simple à
-	 * réaliser.
-	 */
 }

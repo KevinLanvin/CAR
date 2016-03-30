@@ -1,0 +1,43 @@
+Bonjour,
+Ce TP fonctionne avec le ftp et le car-tp2-jdk8 fournis dans l'archive.
+
+Pour lancer les serveurs :
+ - lancer la classe Server du projet ftp
+ - lancer la classe Starter
+
+Vous pouvez accéder au dossier racine via l'url :
+http://localhost:8080/rest/tp2/ftp/
+
+Tester la fonction put :
+Le fichier test.html propose un petit formulaire pour envoyer un nouveau fichier sur le serveur ftp.
+Exemple : envoyez readme.txt dans la destination /titi/readme.txt
+
+Tester la fonction list :
+http://localhost:8080/rest/tp2/ftp/list/
+Vous verrez les différents fichiers et dossiers contenus dans la racine.
+
+Cliquez sur un fichier pour le télécharger.
+
+Cliquez sur (delete) pour le supprimer.
+
+Cliquez sur un dossier pour aller dans ce dossier.
+
+Cliquez sur .. pour retourner dans le dossier parent. Attention, cliquer sur .. dans le dossier racine n'a aucun effet.
+
+Si vous souhaitez ajouter un nouveau dossier, utilisez : 
+http://localhost:8080/rest/tp2/ftp/mkdir/<path>
+
+rmdir n'est pas implémenté.
+
+
+
+Depuis la recette de tp, voici les changements : 
+ - Le put a été changé car il ne fonctionnait pas avec les MultipartForm
+ - Les fonctions delete, list, cwd, mkdir ont été testée sur navigateur
+ - Le serveur ftp a été légèrement modifié à cause de petits bugs d'implémentation
+ 
+ Attention : La classe starter ne démarre pas à l'université pour une raison que j'ignore.
+ J'affirme que les fonctions si dessus ont bien été testées et fonctionnent sur mon navigateur.
+ Si malheureusement le serveur ne démarrait pas chez vous non plus, merci de prendre le temps de regarder le code avant de mettre une mauvaise note =) !
+ 
+ Merci !

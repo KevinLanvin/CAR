@@ -1,29 +1,26 @@
-import java.util.List;
+import java.util.Set;
 
 import akka.actor.ActorRef;
 
-
-public class ConstructionMessage extends Message{
+public class ConstructionMessage extends Message {
 
 	private static final long serialVersionUID = 1L;
-	private List<ActorRef> children;
+	private Set<ActorRef> neighboors;
 	private ActorRef father;
-	
-	public ConstructionMessage(ActorRef father,List<ActorRef> children) {
-		this.father = father;
-		this.children = children;
+
+	public ConstructionMessage(Set<ActorRef> neighboors) {
+		this.neighboors = neighboors;
 	}
-	
-	public List<ActorRef> getChildren(){
-		return children;
+
+	public Set<ActorRef> getNeighboors() {
+		return neighboors;
 	}
-	
-	public ActorRef getFather(){
+
+	public ActorRef getFather() {
 		return father;
 	}
-	
-	public void handleReceiveFor(Noeud n){
-		n.setFather(father);
-		n.addChildren(children);
+
+	public void handleReceiveFor(Noeud n) {
+		n.addNeighboors(neighboors);
 	}
 }

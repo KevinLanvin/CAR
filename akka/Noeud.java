@@ -1,40 +1,33 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import akka.actor.ActorRef;
 import akka.actor.UntypedActor;
 
-
 public class Noeud extends UntypedActor {
-	private List<ActorRef> children;
-	private ActorRef father;
-	
-	public Noeud(){
+	private Set<ActorRef> neighboors;
+
+	public Noeud() {
 		super();
-		this.children= new ArrayList<ActorRef>();
+		this.neighboors = new HashSet<ActorRef>();
 	}
-	
+
 	public void onReceive(Object msg) throws Exception {
-		((Message)msg).handleReceiveFor(this);
+		((Message) msg).handleReceiveFor(this);
 	}
-	
-	public void forwardMessageToChildren(Message msg){
+
+	public void forwardMessageToChildren(Message msg) {
 		for (ActorRef child : getForwarders())
 			child.tell(msg, getSelf());
-	}
-	
-	public void addChildren(List<ActorRef> children){
-		children.addAll(children);
+		System.out.println(this.getSelf() + "   has received : " + msg.msg);
 	}
 
-	public void setFather(ActorRef father){
-		this.father=father;
+	public void addNeighboors(Set<ActorRef> c) {
+		neighboors.addAll(c);
 	}
-	
-	private List<ActorRef> getForwarders(){
-		List<ActorRef> forwarders = children;
-		if(father!=null)
-			forwarders.add(father);
+
+	private Set<ActorRef> getForwarders() {
+		Set<ActorRef> forwarders = neighboors;
 		forwarders.remove(getSender());
 		return forwarders;
 	}
