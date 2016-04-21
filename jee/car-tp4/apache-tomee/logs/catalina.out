@@ -1,0 +1,233 @@
+Oct 13, 2015 11:44:10 AM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /Users/seinturi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+Oct 13, 2015 11:44:11 AM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+Oct 13, 2015 11:44:11 AM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Oct 13, 2015 11:44:11 AM org.apache.openejb.util.OptionsLog info
+INFO: Using 'openejb.jdbc.datasource-creator=org.apache.tomee.jdbc.TomEEDataSourceCreator'
+Oct 13, 2015 11:44:12 AM org.apache.openejb.OpenEJB$Instance <init>
+INFO: ********************************************************************************
+Oct 13, 2015 11:44:12 AM org.apache.openejb.OpenEJB$Instance <init>
+INFO: OpenEJB http://openejb.apache.org/
+Oct 13, 2015 11:44:12 AM org.apache.openejb.OpenEJB$Instance <init>
+INFO: Startup: Tue Oct 13 11:44:12 CEST 2015
+Oct 13, 2015 11:44:12 AM org.apache.openejb.OpenEJB$Instance <init>
+INFO: Copyright 1999-2013 (C) Apache OpenEJB Project, All Rights Reserved.
+Oct 13, 2015 11:44:12 AM org.apache.openejb.OpenEJB$Instance <init>
+INFO: Version: 4.7.1
+Oct 13, 2015 11:44:12 AM org.apache.openejb.OpenEJB$Instance <init>
+INFO: Build date: 20140912
+Oct 13, 2015 11:44:12 AM org.apache.openejb.OpenEJB$Instance <init>
+INFO: Build time: 01:43
+Oct 13, 2015 11:44:12 AM org.apache.openejb.OpenEJB$Instance <init>
+INFO: ********************************************************************************
+Oct 13, 2015 11:44:12 AM org.apache.openejb.OpenEJB$Instance <init>
+INFO: openejb.home = /Users/seinturi/share/workspace-4.5/car-tp4/apache-tomee
+Oct 13, 2015 11:44:12 AM org.apache.openejb.OpenEJB$Instance <init>
+INFO: openejb.base = /Users/seinturi/share/workspace-4.5/car-tp4/apache-tomee
+Oct 13, 2015 11:44:12 AM org.apache.openejb.cdi.CdiBuilder initializeOWB
+INFO: Created new singletonService org.apache.openejb.cdi.ThreadSingletonServiceImpl@4767e65b
+Oct 13, 2015 11:44:12 AM org.apache.openejb.cdi.CdiBuilder initializeOWB
+INFO: Succeeded in installing singleton service
+Oct 13, 2015 11:44:12 AM org.apache.openejb.config.ConfigurationFactory init
+INFO: openejb configuration file is '/Users/seinturi/share/workspace-4.5/car-tp4/apache-tomee/conf/tomee.xml'
+Oct 13, 2015 11:44:12 AM org.apache.openejb.config.ConfigurationFactory configureService
+INFO: Configuring Service(id=Tomcat Security Service, type=SecurityService, provider-id=Tomcat Security Service)
+Oct 13, 2015 11:44:12 AM org.apache.openejb.config.ConfigurationFactory configureService
+INFO: Configuring Service(id=Default Transaction Manager, type=TransactionManager, provider-id=Default Transaction Manager)
+Oct 13, 2015 11:44:12 AM org.apache.openejb.util.OptionsLog info
+INFO: Using 'openejb.system.apps=true'
+Oct 13, 2015 11:44:12 AM org.apache.openejb.config.ConfigurationFactory configureApplication
+INFO: Configuring enterprise application: openejb
+Oct 13, 2015 11:44:12 AM org.apache.openejb.config.InitEjbDeployments deploy
+INFO: Using openejb.deploymentId.format '{ejbName}'
+Oct 13, 2015 11:44:12 AM org.apache.openejb.config.InitEjbDeployments deploy
+INFO: Auto-deploying ejb openejb/Deployer: EjbDeployment(deployment-id=openejb/Deployer)
+Oct 13, 2015 11:44:12 AM org.apache.openejb.config.InitEjbDeployments deploy
+INFO: Auto-deploying ejb openejb/ConfigurationInfo: EjbDeployment(deployment-id=openejb/ConfigurationInfo)
+Oct 13, 2015 11:44:12 AM org.apache.openejb.config.InitEjbDeployments deploy
+INFO: Auto-deploying ejb MEJB: EjbDeployment(deployment-id=MEJB)
+Oct 13, 2015 11:44:12 AM org.apache.openejb.config.ConfigurationFactory configureService
+INFO: Configuring Service(id=Default Stateless Container, type=Container, provider-id=Default Stateless Container)
+Oct 13, 2015 11:44:12 AM org.apache.openejb.config.AutoConfig createContainer
+INFO: Auto-creating a container for bean openejb/Deployer: Container(type=STATELESS, id=Default Stateless Container)
+Oct 13, 2015 11:44:12 AM org.apache.openejb.config.AppInfoBuilder build
+INFO: Enterprise application "openejb" loaded.
+Oct 13, 2015 11:44:12 AM org.apache.openejb.assembler.classic.Assembler createRecipe
+INFO: Creating TransactionManager(id=Default Transaction Manager)
+Oct 13, 2015 11:44:12 AM org.apache.openejb.assembler.classic.Assembler createRecipe
+INFO: Creating SecurityService(id=Tomcat Security Service)
+Oct 13, 2015 11:44:12 AM org.apache.openejb.assembler.classic.Assembler createRecipe
+INFO: Creating Container(id=Default Stateless Container)
+Oct 13, 2015 11:44:12 AM org.apache.openejb.assembler.classic.Assembler createApplication
+INFO: Assembling app: openejb
+Oct 13, 2015 11:44:12 AM org.apache.openejb.util.OptionsLog info
+INFO: Using 'openejb.jndiname.format={deploymentId}{interfaceType.openejbLegacyName}'
+Oct 13, 2015 11:44:12 AM org.apache.openejb.assembler.classic.JndiBuilder bind
+INFO: Jndi(name=openejb/DeployerBusinessRemote) --> Ejb(deployment-id=openejb/Deployer)
+Oct 13, 2015 11:44:12 AM org.apache.openejb.assembler.classic.JndiBuilder bind
+INFO: Jndi(name=global/openejb/openejb/Deployer!org.apache.openejb.assembler.Deployer) --> Ejb(deployment-id=openejb/Deployer)
+Oct 13, 2015 11:44:12 AM org.apache.openejb.assembler.classic.JndiBuilder bind
+INFO: Jndi(name=global/openejb/openejb/Deployer) --> Ejb(deployment-id=openejb/Deployer)
+Oct 13, 2015 11:44:12 AM org.apache.openejb.assembler.classic.JndiBuilder bind
+INFO: Jndi(name=openejb/ConfigurationInfoBusinessRemote) --> Ejb(deployment-id=openejb/ConfigurationInfo)
+Oct 13, 2015 11:44:12 AM org.apache.openejb.assembler.classic.JndiBuilder bind
+INFO: Jndi(name=global/openejb/openejb/ConfigurationInfo!org.apache.openejb.assembler.classic.cmd.ConfigurationInfo) --> Ejb(deployment-id=openejb/ConfigurationInfo)
+Oct 13, 2015 11:44:12 AM org.apache.openejb.assembler.classic.JndiBuilder bind
+INFO: Jndi(name=global/openejb/openejb/ConfigurationInfo) --> Ejb(deployment-id=openejb/ConfigurationInfo)
+Oct 13, 2015 11:44:12 AM org.apache.openejb.assembler.classic.JndiBuilder bind
+INFO: Jndi(name=MEJB) --> Ejb(deployment-id=MEJB)
+Oct 13, 2015 11:44:12 AM org.apache.openejb.assembler.classic.JndiBuilder bind
+INFO: Jndi(name=global/openejb/MEJB!javax.management.j2ee.ManagementHome) --> Ejb(deployment-id=MEJB)
+Oct 13, 2015 11:44:12 AM org.apache.openejb.assembler.classic.JndiBuilder bind
+INFO: Jndi(name=global/openejb/MEJB) --> Ejb(deployment-id=MEJB)
+Oct 13, 2015 11:44:12 AM org.apache.openejb.assembler.classic.Assembler startEjbs
+INFO: Created Ejb(deployment-id=openejb/Deployer, ejb-name=openejb/Deployer, container=Default Stateless Container)
+Oct 13, 2015 11:44:12 AM org.apache.openejb.assembler.classic.Assembler startEjbs
+INFO: Created Ejb(deployment-id=MEJB, ejb-name=MEJB, container=Default Stateless Container)
+Oct 13, 2015 11:44:12 AM org.apache.openejb.assembler.classic.Assembler startEjbs
+INFO: Created Ejb(deployment-id=openejb/ConfigurationInfo, ejb-name=openejb/ConfigurationInfo, container=Default Stateless Container)
+Oct 13, 2015 11:44:12 AM org.apache.openejb.assembler.classic.Assembler startEjbs
+INFO: Started Ejb(deployment-id=openejb/Deployer, ejb-name=openejb/Deployer, container=Default Stateless Container)
+Oct 13, 2015 11:44:12 AM org.apache.openejb.assembler.classic.Assembler startEjbs
+INFO: Started Ejb(deployment-id=MEJB, ejb-name=MEJB, container=Default Stateless Container)
+Oct 13, 2015 11:44:12 AM org.apache.openejb.assembler.classic.Assembler startEjbs
+INFO: Started Ejb(deployment-id=openejb/ConfigurationInfo, ejb-name=openejb/ConfigurationInfo, container=Default Stateless Container)
+Oct 13, 2015 11:44:12 AM org.apache.openejb.assembler.classic.Assembler deployMBean
+INFO: Deployed MBean(openejb.user.mbeans:application=openejb,group=org.apache.openejb.assembler.monitoring,name=JMXDeployer)
+Oct 13, 2015 11:44:12 AM org.apache.openejb.assembler.classic.Assembler createApplication
+INFO: Deployed Application(path=openejb)
+Oct 13, 2015 11:44:13 AM org.apache.openejb.server.SimpleServiceManager start
+INFO:   ** Bound Services **
+Oct 13, 2015 11:44:13 AM org.apache.openejb.server.SimpleServiceManager printRow
+INFO:   NAME                 IP              PORT  
+Oct 13, 2015 11:44:13 AM org.apache.openejb.server.SimpleServiceManager start
+INFO: -------
+Oct 13, 2015 11:44:13 AM org.apache.openejb.server.SimpleServiceManager start
+INFO: Ready!
+Oct 13, 2015 11:44:13 AM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 2691 ms
+Oct 13, 2015 11:44:13 AM org.apache.tomee.catalina.OpenEJBNamingContextListener bindResource
+INFO: Importing a Tomcat Resource with id 'UserDatabase' of type 'org.apache.catalina.UserDatabase'.
+Oct 13, 2015 11:44:13 AM org.apache.openejb.assembler.classic.Assembler createRecipe
+INFO: Creating Resource(id=UserDatabase)
+Oct 13, 2015 11:44:13 AM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Oct 13, 2015 11:44:13 AM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat (TomEE)/7.0.55 (1.7.1)
+Oct 13, 2015 11:44:13 AM org.apache.catalina.startup.HostConfig deployWAR
+INFO: Deploying web application archive /Users/seinturi/share/workspace-4.5/car-tp4/apache-tomee/webapps/ROOT.war
+Oct 13, 2015 11:44:13 AM org.apache.tomee.catalina.TomcatWebAppBuilder init
+INFO: ------------------------- localhost -> /
+Oct 13, 2015 11:44:13 AM org.apache.openejb.config.ConfigurationFactory configureApplication
+INFO: Configuring enterprise application: /Users/seinturi/share/workspace-4.5/car-tp4/apache-tomee/webapps/ROOT
+Oct 13, 2015 11:44:13 AM org.apache.openejb.config.InitEjbDeployments deploy
+INFO: Auto-deploying ejb LibraryBean: EjbDeployment(deployment-id=LibraryBean)
+Oct 13, 2015 11:44:13 AM org.apache.openejb.config.ConfigurationFactory configureService
+INFO: Configuring Service(id=Default JDBC Database, type=Resource, provider-id=Default JDBC Database)
+Oct 13, 2015 11:44:13 AM org.apache.openejb.config.AutoConfig logAutoCreateResource
+INFO: Auto-creating a Resource with id 'Default JDBC Database' of type 'javax.sql.DataSource for 'LibraryBean'.
+Oct 13, 2015 11:44:13 AM org.apache.openejb.assembler.classic.Assembler createRecipe
+INFO: Creating Resource(id=Default JDBC Database)
+Oct 13, 2015 11:44:13 AM org.apache.tomee.jdbc.TomEEDataSourceCreator$TomEEDataSource readOnly
+INFO: Disabling testOnBorrow since no validation query is provided
+Oct 13, 2015 11:44:13 AM org.apache.openejb.config.AutoConfig processResourceRef
+INFO: Auto-linking resource-ref 'java:comp/env/car.tp4.LibraryBean/ds' in bean LibraryBean to Resource(id=Default JDBC Database)
+Oct 13, 2015 11:44:13 AM org.apache.openejb.config.AutoConfig deploy
+INFO: Configuring PersistenceUnit(name=book-pu)
+Oct 13, 2015 11:44:13 AM org.apache.openejb.config.AutoConfig logAutoCreateResource
+INFO: Auto-creating a Resource with id 'Default JDBC DatabaseNonJta' of type 'DataSource for 'book-pu'.
+Oct 13, 2015 11:44:13 AM org.apache.openejb.config.AutoConfig deploy
+INFO: Configuring Service(id=Default JDBC DatabaseNonJta, type=Resource, provider-id=Default JDBC Database)
+Oct 13, 2015 11:44:13 AM org.apache.openejb.assembler.classic.Assembler createRecipe
+INFO: Creating Resource(id=Default JDBC DatabaseNonJta)
+Oct 13, 2015 11:44:13 AM org.apache.tomee.jdbc.TomEEDataSourceCreator$TomEEDataSource readOnly
+INFO: Disabling testOnBorrow since no validation query is provided
+Oct 13, 2015 11:44:13 AM org.apache.openejb.config.AutoConfig setJtaDataSource
+INFO: Adjusting PersistenceUnit book-pu <jta-data-source> to Resource ID 'Default JDBC Database' from 'bookDatabase'
+Oct 13, 2015 11:44:13 AM org.apache.openejb.config.AutoConfig setNonJtaDataSource
+INFO: Adjusting PersistenceUnit book-pu <non-jta-data-source> to Resource ID 'Default JDBC DatabaseNonJta' from 'null'
+Oct 13, 2015 11:44:13 AM org.apache.openejb.config.AppInfoBuilder build
+INFO: Enterprise application "/Users/seinturi/share/workspace-4.5/car-tp4/apache-tomee/webapps/ROOT" loaded.
+Oct 13, 2015 11:44:13 AM org.apache.openejb.assembler.classic.Assembler createApplication
+INFO: Assembling app: /Users/seinturi/share/workspace-4.5/car-tp4/apache-tomee/webapps/ROOT
+Oct 13, 2015 11:44:13 AM null
+INFO: OpenJPA dynamically loaded a validation provider.
+Oct 13, 2015 11:44:13 AM org.apache.openejb.assembler.classic.ReloadableEntityManagerFactory createDelegate
+INFO: PersistenceUnit(name=book-pu, provider=org.apache.openjpa.persistence.PersistenceProviderImpl) - provider time 347ms
+Oct 13, 2015 11:44:14 AM null
+WARNING: The type "car.tp4.Book" must have a no-args constructor. Adding a public no-args constructor.
+Oct 13, 2015 11:44:14 AM org.apache.openejb.assembler.classic.JndiBuilder bind
+INFO: Jndi(name=LibraryBeanLocal) --> Ejb(deployment-id=LibraryBean)
+Oct 13, 2015 11:44:14 AM org.apache.openejb.assembler.classic.JndiBuilder bind
+INFO: Jndi(name=global//LibraryBean!car.tp4.LibraryItf) --> Ejb(deployment-id=LibraryBean)
+Oct 13, 2015 11:44:14 AM org.apache.openejb.assembler.classic.JndiBuilder bind
+INFO: Jndi(name=global//LibraryBean) --> Ejb(deployment-id=LibraryBean)
+Oct 13, 2015 11:44:14 AM org.apache.openejb.cdi.CdiBuilder initSingleton
+INFO: Existing thread singleton service in SystemInstance(): org.apache.openejb.cdi.ThreadSingletonServiceImpl@4767e65b
+Oct 13, 2015 11:44:14 AM org.apache.openejb.cdi.OpenEJBLifecycle startApplication
+INFO: OpenWebBeans Container is starting...
+Oct 13, 2015 11:44:14 AM org.apache.webbeans.plugins.PluginLoader startUp
+INFO: Adding OpenWebBeansPlugin : [CdiPlugin]
+Oct 13, 2015 11:44:14 AM org.apache.webbeans.plugins.PluginLoader startUp
+INFO: Adding OpenWebBeansPlugin : [OpenWebBeansJsfPlugin]
+Oct 13, 2015 11:44:14 AM org.apache.webbeans.config.BeansDeployer validateInjectionPoints
+INFO: All injection points were validated successfully.
+Oct 13, 2015 11:44:14 AM org.apache.openejb.cdi.OpenEJBLifecycle startApplication
+INFO: OpenWebBeans Container has started, it took 98 ms.
+Oct 13, 2015 11:44:14 AM org.apache.openejb.assembler.classic.Assembler startEjbs
+INFO: Created Ejb(deployment-id=LibraryBean, ejb-name=LibraryBean, container=Default Stateless Container)
+Oct 13, 2015 11:44:14 AM org.apache.openejb.assembler.classic.Assembler startEjbs
+INFO: Started Ejb(deployment-id=LibraryBean, ejb-name=LibraryBean, container=Default Stateless Container)
+Oct 13, 2015 11:44:14 AM org.apache.openejb.assembler.classic.Assembler createApplication
+INFO: Deployed Application(path=/Users/seinturi/share/workspace-4.5/car-tp4/apache-tomee/webapps/ROOT)
+Oct 13, 2015 11:44:14 AM org.apache.catalina.startup.HostConfig deployWAR
+INFO: Deployment of web application archive /Users/seinturi/share/workspace-4.5/car-tp4/apache-tomee/webapps/ROOT.war has finished in 1,640 ms
+Oct 13, 2015 11:44:14 AM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+Oct 13, 2015 11:44:14 AM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Oct 13, 2015 11:44:14 AM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 1700 ms
+Oct 13, 2015 11:44:27 AM null
+INFO: Starting OpenJPA 2.4.0-nonfinal-1598334
+Oct 13, 2015 11:44:27 AM org.hsqldb.persist.Logger logInfoEvent
+INFO: checkpointClose start
+Oct 13, 2015 11:44:27 AM org.hsqldb.persist.Logger logInfoEvent
+INFO: checkpointClose end
+Oct 13, 2015 11:44:28 AM null
+INFO: Using dictionary class "org.apache.openjpa.jdbc.sql.HSQLDictionary" (HSQL Database Engine 2.3.2 ,HSQL Database Engine Driver 2.3.2).
+Oct 13, 2015 11:44:28 AM null
+INFO: Connected to HSQL Database Engine version 2.2 using JDBC driver HSQL Database Engine Driver version 2.3.2. 
+<<<< org.apache.openejb.resource.jdbc.managed.local.ManagedDataSource@6cd7c572
+<<<< org.apache.openejb.resource.jdbc.managed.local.ManagedDataSource@6cd7c572
+<<<< org.apache.openejb.resource.jdbc.managed.local.ManagedDataSource@6cd7c572
+Oct 13, 2015 11:44:44 AM org.apache.catalina.core.StandardServer await
+INFO: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+Oct 13, 2015 11:44:44 AM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-8080"]
+Oct 13, 2015 11:44:44 AM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Oct 13, 2015 11:44:44 AM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Oct 13, 2015 11:44:44 AM org.apache.openejb.assembler.classic.Assembler destroyApplication
+INFO: Undeploying app: /Users/seinturi/share/workspace-4.5/car-tp4/apache-tomee/webapps/ROOT
+Oct 13, 2015 11:44:44 AM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [] appears to have started a thread named [HSQLDB Timer @3efd899a] but has failed to stop it. This is very likely to create a memory leak.
+Oct 13, 2015 11:44:44 AM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-8080"]
+Oct 13, 2015 11:44:44 AM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Oct 13, 2015 11:44:44 AM org.apache.openejb.server.SimpleServiceManager stop
+INFO: Stopping server services
+Oct 13, 2015 11:44:44 AM org.apache.openejb.assembler.classic.Assembler destroyApplication
+INFO: Undeploying app: openejb
+Oct 13, 2015 11:44:44 AM org.apache.openejb.assembler.classic.Assembler destroyResource
+INFO: Closing DataSource: Default JDBC DatabaseNonJta
+Oct 13, 2015 11:44:44 AM org.apache.openejb.assembler.classic.Assembler destroyResource
+INFO: Closing DataSource: Default JDBC Database
+Oct 13, 2015 11:44:44 AM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-8080"]
+Oct 13, 2015 11:44:44 AM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
